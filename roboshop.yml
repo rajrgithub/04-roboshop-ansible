@@ -1,0 +1,7 @@
+- name: RoboShop Setup
+  hosts: "{{HOSTS}}"
+  become: yes
+  roles:
+    - "{{ROLE_NAME}}"
+
+# ansible-playbook -i frontend-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=frontend
