@@ -4,4 +4,5 @@
   roles:
     - "{{ROLE_NAME}}"
 
-# ansible-playbook -i frontend-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=frontend
+#  ansible-playbook -i frontend-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=frontend -e ansible_user=centos -e ansible_password=DevOps321
+#  ansible-playbook -i catalogue-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=catalogue -e ansible_user=centos -e ansible_password=DevOps321
