@@ -10,6 +10,6 @@
     state: import
     name: all
     target: /app/schema/{{component}}.sql
-    login_host: mysql-dev.devopsb70.online
+    login_host: mysql-dev.rajdevops.online
     login_user: root
     login_password: "{{ root_mysql_password }}"
