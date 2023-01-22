@@ -14,3 +14,15 @@
 #  ansible-playbook -i shipping-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=shipping -e ansible_user=centos -e ansible_password=DevOps321 -e root_mysql_password=RoboShop@1
 #  ansible-playbook -i rabbitmq-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=rabbitmq -e ansible_user=centos -e ansible_password=DevOps321 -e roboshop_rabbitmq_password=roboshop123
 #  ansible-playbook -i payment-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=payment -e ansible_user=centos -e ansible_password=DevOps321 -e roboshop_rabbitmq_password=roboshop123
+
+# Parameter Store
+#  ansible-playbook -i frontend-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=frontend -e ansible_user=centos -e ansible_password=DevOps321 -e env=dev
+#  ansible-playbook -i mongodb-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=mongodb -e ansible_user=centos -e ansible_password=DevOps321 -e env=dev
+#  ansible-playbook -i catalogue-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=catalogue -e ansible_user=centos -e ansible_password=DevOps321 -e env=dev
+#  ansible-playbook -i redis-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=redis -e ansible_user=centos -e ansible_password=DevOps321 -e env=dev
+#  ansible-playbook -i user-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=user -e ansible_user=centos -e ansible_password=DevOps321 -e env=dev
+#  ansible-playbook -i cart-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=cart -e ansible_user=centos -e ansible_password=DevOps321 -e env=dev
+#  ansible-playbook -i mysql-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=mysql -e ansible_user=centos -e ansible_password=DevOps321 -e root_mysql_password=RoboShop@1 -e env=dev
+#  ansible-playbook -i shipping-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=shipping -e ansible_user=centos -e ansible_password=DevOps321 -e root_mysql_password=RoboShop@1 -e env=dev
+#  ansible-playbook -i rabbitmq-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=rabbitmq -e ansible_user=centos -e ansible_password=DevOps321 -e roboshop_rabbitmq_password=roboshop123 -e env=dev
+#  ansible-playbook -i payment-dev.rajdevops.online, roboshop.yml -e HOSTS=all -e ROLE_NAME=payment -e ansible_user=centos -e ansible_password=DevOps321 -e roboshop_rabbitmq_password=roboshop123 -e env=dev
