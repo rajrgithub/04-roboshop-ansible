@@ -29,6 +29,11 @@ scrape_configs:
     ec2_sd_configs:
       - region: us-east-1
         port: 9100
+#    relabel_configs:
+#    - source_labels: [ __meta_ec2_tag_env ]
+#      target_label: environment
     relabel_configs:
-    - source_labels: [ __meta_ec2_tag_env ]
-      target_label: environment
+{% for item in labels %}
+    - source_labels: [__meta_ec2_tag_{{ item.tag }}]
+      target_label: {{ item.label }}
+{% endfor %}
