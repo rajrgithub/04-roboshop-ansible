@@ -1,3 +1,9 @@
 - name: Setup Server
   ansible.builtin.include_tasks: "server.yml"
   when: prometheus == "server"
+
+
+
+
+# Run the pull command from Prometheus Server
+# ansible-pull -i localhost, -U https://github.com/rajrgithub/04-roboshop-ansible.git roboshop.yml -e ROLE_NAME=prometheus -e prometheus=server
