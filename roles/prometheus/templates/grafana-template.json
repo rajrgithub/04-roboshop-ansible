@@ -88,7 +88,7 @@
             "type": "prometheus",
             "uid": "3NxIffbVz"
           },
-          "expr": "100-(avg by (name) (floor(rate(node_cpu_seconds_total{mode=\"idle\",name=\"dev-frontend\"}[1m])*100)))",
+          "expr": "100 - (avg by (name) (floor(rate(node_cpu_seconds_total{mode=\"idle\",name=\"dev-frontend\"}[1m])*100)))",
           "refId": "A"
         }
       ],
@@ -174,7 +174,7 @@
             "type": "prometheus",
             "uid": "3NxIffbVz"
           },
-          "expr": "100-(avg by (name) (floor(rate(node_cpu_seconds_total{mode=\"idle\",name=\"dev-frontend\"}[1m])*100)))",
+          "expr": "100 - (avg by (name) (floor(rate(node_cpu_seconds_total{mode=\"idle\",name=\"dev-frontend\"}[1m])*100)))",
           "refId": "A"
         }
       ],
@@ -190,8 +190,8 @@
     "list": []
   },
   "time": {
-    "from": "2023-03-02T11:39:35.284Z",
-    "to": "2023-03-02T21:29:24.724Z"
+    "from": "now-6h",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
