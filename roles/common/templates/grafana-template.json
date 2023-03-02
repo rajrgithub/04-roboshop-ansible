@@ -182,7 +182,6 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
   "schemaVersion": 36,
   "style": "dark",
   "tags": [],
