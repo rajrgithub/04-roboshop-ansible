@@ -9,3 +9,6 @@
 
 # Run the pull command from Prometheus Server
 # ansible-pull -i localhost, -U https://github.com/rajrgithub/04-roboshop-ansible.git roboshop.yml -e ROLE_NAME=prometheus -e prometheus=server
+
+# To run Grafana
+# ansible-pull -i localhost, -U https://github.com/rajrgithub/04-roboshop-ansible.git roboshop.yml -e ROLE_NAME=prometheus -e prometheus=server -e grafana_api_key=eyJrIjoiVUdhR3E2cEZCd1hZdWJCdEtVRUZGWElzWTB0RnVkUUUiLCJuIjoiZ3JhZmFuYS1rZXkiLCJpZCI6MX0
