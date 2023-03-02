@@ -48,6 +48,7 @@
         - {name: "dev.rds.DB_ADMIN_PASS", value: "RoboShop123" }
         - {name: "dev.rabbitmq.USER", value: "roboshop" }
         - {name: "dev.rabbitmq.PASS", value: "roboshop1234" }
+        - {name: "grafana.api_key", value: "eyJrIjoicENWa3dhd25kZmZUeHV5dU1GSzBLalJoOG85dWQwakgiLCJuIjoiY2xpIiwiaWQiOjF9" }
 
 
 # ansible-playbook aws-parameters.yml
