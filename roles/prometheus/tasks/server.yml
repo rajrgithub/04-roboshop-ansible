@@ -22,6 +22,17 @@
     name: prometheus
     state: restarted
 
+- name: Copy AlertManager Configfuration
+  ansible.builtin.template:
+    src: alertmanager.yml
+    dest: /opt/alertmanager/alertmanager.yml
+
+- name: Restart AlertManager
+  ansible.builtin.systemd:
+    name: alertmanager
+    state: restarted
+
+
 ### Grafana
 # Commented to do for every instance & moved this code common folder i.e.,
 #  whenever components are created grafana templates will also get created
