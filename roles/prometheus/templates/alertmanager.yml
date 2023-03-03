@@ -19,3 +19,10 @@ inhibit_rules:
     target_match:
       severity: 'warning'
     equal: ['alertname', 'dev', 'instance']
+
+# Email credentials are created in parameter store using aws-parameters.yml
+# A user with AWS access is required to get Paramater store credentials from Prometheus Server
+# "prometheus-server-ec2-role" IAM role is created to get access to ec2 instances
+# Create policy to get access to AWS paramaters & attach the policy to the IAM role
+# Then AWS parameters can be accessed from Prometheus server
+# "prometheus-server-ec2-role" role should be added to Prometheus ec2 instance
