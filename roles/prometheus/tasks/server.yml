@@ -7,6 +7,11 @@
       - { tag: "env", label: "environment" }
       - { tag: "Name", label: "name" }
 
+- name: Copy Record Rules
+  ansible.builtin.template:
+    src: record-rules.yml
+    dest: /opt/prometheus/record-rules.yml
+
 - name: Restart Prometheus
   ansible.builtin.systemd:
     name: prometheus
