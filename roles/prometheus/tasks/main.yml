@@ -12,3 +12,7 @@
 
 # To run Grafana
 # ansible-pull -i localhost, -U https://github.com/rajrgithub/04-roboshop-ansible.git roboshop.yml -e ROLE_NAME=prometheus -e prometheus=server -e grafana_api_key=eyJrIjoiVUdhR3E2cEZCd1hZdWJCdEtVRUZGWElzWTB0RnVkUUUiLCJuIjoiZ3JhZmFuYS1rZXkiLCJpZCI6MX0
+
+#  http://3.218.244.164:9090  -- Prometheus
+#  http://3.218.244.164:3000  -- Grafana
+#  http://3.218.244.164:9093  -- Alert Manager
