@@ -17,7 +17,7 @@
 # Reload Prometheus configuration without restarting the Prometheus service
 # Add the flag --web.enable-lifecycle to the Prometheus.service file
 # ExecStart=/opt/prometheus/prometheus --web.enable-lifecycle
-- name: Reload Prometheus
+- name: Reload Prometheus configuration without restarting Prometheus Service
   ansible.builtin.shell: curl -v -s -XPOST http://172.31.13.17:9090/-/reload
 
 ### Grafana
