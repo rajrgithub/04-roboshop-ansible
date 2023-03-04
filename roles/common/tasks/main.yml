@@ -10,8 +10,9 @@
     src: alert.yml
     dest: /tmp/alert.yml
 
+# Copy service alert's configuration from component server to Prometheus Server
 - name: Copy Prometheus Alerts Configuration to Prometheus Server
-  ansible.builtin.shell: sshpass -p {{ lookup('aws_ssm', '{{env}}.ssh.user', region='us-east-1' ) }} scp /tmp/alert.yml {{ lookup('aws_ssm', '{{env}}.ssh.pass', region='us-east-1' ) }}@172.31.9.50:/opt/prometheus/alerts/{{component}}.yml
+  ansible.builtin.shell: sshpass -p {{ lookup('aws_ssm', '{{env}}.ssh.pass', region='us-east-1' ) }} scp /tmp/alert.yml {{ lookup('aws_ssm', '{{env}}.ssh.user', region='us-east-1' ) }}@172.31.13.17:/opt/prometheus/alerts/{{component}}.yml
 
 
 ### Grafana
