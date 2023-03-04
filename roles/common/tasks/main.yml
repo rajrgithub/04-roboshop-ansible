@@ -14,6 +14,11 @@
 - name: Copy Prometheus Alerts Configuration to Prometheus Server
   ansible.builtin.shell: sshpass -p {{ lookup('aws_ssm', '{{env}}.ssh.pass', region='us-east-1' ) }} scp /tmp/alert.yml {{ lookup('aws_ssm', '{{env}}.ssh.user', region='us-east-1' ) }}@172.31.13.17:/opt/prometheus/alerts/{{component}}.yml
 
+# Reload Prometheus configuration without restarting the Prometheus service
+# Add the flag --web.enable-lifecycle to the Prometheus.service file
+# ExecStart=/opt/prometheus/prometheus --web.enable-lifecycle
+- name: Reload Prometheus
+  ansible.builtin.shell: curl -v -s -XPOST http://172.31.13.17:9090/-/reload
 
 ### Grafana
 - name: Make Template
