@@ -51,5 +51,7 @@
         - {name: "grafana.api_key", value: "eyJrIjoicENWa3dhd25kZmZUeHV5dU1GSzBLalJoOG85dWQwakgiLCJuIjoiY2xpIiwiaWQiOjF9" }
         - {name: "ses.user", value: "AKIA6FEY5JH4BEGT5IGE" }
         - {name: "ses.pass", value: "BMn+5QisAl1FSMKbe7VQDsnGl1YkEo+vd/hkGJM3qpVp" }
+        - { name: "dev.ssh.user", value: "centos" }
+        - { name: "dev.ssh.pass", value: "DevOps321" }
 
 # ansible-playbook aws-parameters.yml
