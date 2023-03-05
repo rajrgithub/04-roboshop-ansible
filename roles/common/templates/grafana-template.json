@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 15,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -38,9 +38,23 @@
           "color": {
             "mode": "thresholds"
           },
-          "mappings": [],
-          "max": 100,
-          "min": 0,
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -49,27 +63,25 @@
                 "value": null
               },
               {
-                "color": "semi-dark-yellow",
-                "value": 50
-              },
-              {
                 "color": "red",
                 "value": 80
               }
             ]
-          },
-          "unit": "percent"
+          }
         },
         "overrides": []
       },
       "gridPos": {
         "h": 6,
-        "w": 5,
+        "w": 6,
         "x": 0,
         "y": 0
       },
-      "id": 4,
+      "id": 8,
       "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -78,8 +90,10 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "text": {
+          "titleSize": 19
+        },
+        "textMode": "auto"
       },
       "pluginVersion": "8.5.6",
       "targets": [
@@ -88,12 +102,12 @@
             "type": "prometheus",
             "uid": "3NxIffbVz"
           },
-          "expr": "100 - (avg by (name) (floor(rate(node_cpu_seconds_total{mode=\"idle\",name=\"{{env}}-{{component}}\"}[1m])*100)))",
+          "expr": "node_systemd_unit_state{name=\"{{env}}-{{component}}\",exported_name=\"{{service_name}}.service\",state=\"active\"}",
           "refId": "A"
         }
       ],
-      "title": "CPU %",
-      "type": "gauge"
+      "title": "Component Service  Status",
+      "type": "stat"
     },
     {
       "datasource": {
@@ -151,9 +165,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 12,
         "w": 11,
-        "x": 5,
+        "x": 6,
         "y": 0
       },
       "id": 2,
@@ -180,6 +194,140 @@
       ],
       "title": "CPU Time",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "3NxIffbVz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "semi-dark-yellow",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 6
+      },
+      "id": 4,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.5.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "3NxIffbVz"
+          },
+          "expr": "100 - (avg by (name) (floor(rate(node_cpu_seconds_total{mode=\"idle\",name=\"{{env}}-{{component}}\"}[1m])*100)))",
+          "refId": "A"
+        }
+      ],
+      "title": "CPU %",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "3NxIffbVz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-yellow",
+                "value": 80
+              },
+              {
+                "color": "dark-red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 17,
+        "x": 0,
+        "y": 12
+      },
+      "id": 6,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "8.5.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "3NxIffbVz"
+          },
+          "expr": "node_memory_used_percent{name=\"{{env}}-{{component}}\"}",
+          "refId": "A"
+        }
+      ],
+      "title": "Memory Used percentage",
+      "type": "gauge"
     }
   ],
   "schemaVersion": 36,
