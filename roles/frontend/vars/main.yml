@@ -3,3 +3,6 @@ app_version: 1.0.0
 service_name: nginx
 monitor_ssh_service: true
 filebeat: true
+app_log_file: /var/log/nginx/access.log
+exclude_lines: true
+exclude_words: ["/api/ratings"]
