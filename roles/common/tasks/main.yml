@@ -20,6 +20,10 @@
 - name: Reload Prometheus configuration without restarting Prometheus Service
   ansible.builtin.shell: curl -v -s -XPOST http://172.31.13.17:9090/-/reload
 
+- name: Import ELK
+  ansible.builtin.import_role:
+    name: elk
+
 ### Grafana
 - name: Make Template
   ansible.builtin.template:

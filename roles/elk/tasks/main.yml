@@ -3,6 +3,9 @@
   when: logstash is defined
 
 
+- name: Setup Filebeat
+  ansible.builtin.include_tasks: "filebeat.yml"
+  when: filebeat
 
 
 # ansible-pull -i localhost, -U https://github.com/rajrgithub/04-roboshop-ansible.git roboshop.yml -e ROLE_NAME=elk -e logstash=true
