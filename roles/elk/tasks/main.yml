@@ -1,0 +1,15 @@
+- name: Setup Logstash
+  ansible.builtin.include_tasks: "logstash.yml"
+  when: logstash is defined
+
+
+
+
+# ansible-pull -i localhost, -U https://github.com/rajrgithub/04-roboshop-ansible.git roboshop.yml -e ROLE_NAME=elk -e logstash=true
+
+
+# Kibana URL : Use the IP in browser
+#  http://34.230.79.164/app/home
+#  ElasticSearch port 9200
+#  logstash default port 5044
+
