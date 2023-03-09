@@ -34,9 +34,9 @@ filebeat.inputs:
 
     # Exclude lines. A list of regular expressions to match. It drops the lines that are
     # matching any regular expression from the list.
-  {% if exclude_lines %}
-exclude_lines: {{ exclude_words }}
-  {% endif %}
+{% if exclude_lines %}
+    exclude_lines: {{ exclude_words }}
+{% endif %}
 # Include lines. A list of regular expressions to match. It exports the lines that are
 # matching any regular expression from the list.
 #include_lines: ['^ERR', '^WARN']

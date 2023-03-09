@@ -1,1 +1,2 @@
 filebeat: false
+exclude_lines: false
