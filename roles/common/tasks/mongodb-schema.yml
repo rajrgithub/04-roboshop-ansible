@@ -16,8 +16,10 @@
 #    idempotent: yes
 
 # Added for DOC DB to connect from app
+#- name: Load Schema
+#  ansible.builtin.shell: mongo --ssl --host dev-docdb-cluster.cluster-cmoi2t1a1os3.us-east-1.docdb.amazonaws.com:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_USER", region='us-east-1' ) }} --password {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_PASS", region='us-east-1' ) }} < /app/schema/{{component}}.js
+
+# Updated Hardcoded host value
 - name: Load Schema
-  ansible.builtin.shell: mongo --ssl --host dev-docdb-cluster.cluster-cmoi2t1a1os3.us-east-1.docdb.amazonaws.com:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_USER", region='us-east-1' ) }} --password {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_PASS", region='us-east-1' ) }} < /app/schema/{{component}}.js
-
-
+  ansible.builtin.shell: mongo --ssl --host {{ lookup('aws_ssm', "{{env}}.docdb.DOCDB_URL", region='us-east-1' ) }}:27017 --sslCAFile /app/rds-combined-ca-bundle.pem --username {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_USER", region='us-east-1' ) }} --password {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_PASS", region='us-east-1' ) }} < /app/schema/{{component}}.js
 
