@@ -29,6 +29,28 @@
         - {name: "dev.user.MONGO", value: "true" }
         - {name: "dev.user.MONGO_URL", value: "mongodb://mongodb-dev.rajdevops.online:27017/users" }
         - {name: "dev.user.REDIS_HOST", value: "redis-dev.rajdevops.online" }
+# PROD Parameters
+        - {name: "prod.cart.REDIS_HOST", value: "redis-prod.rajdevops.online" }
+        - {name: "prod.cart.CATALOGUE_HOST", value: "catalogue-prod.rajdevops.online" }
+        - {name: "prod.catalogue.MONGO", value: "true" }
+        - {name: "prod.catalogue.MONGO_URL", value: "mongodb://mongodb-prod.rajdevops.online:27017/catalogue" }
+        # change port 8080 to 80 since terraform lb listens on port 80
+        - {name: "prod.frontend.CATALOGUE_URL", value: "http://catalogue-dev.rajdevops.online:80/" }
+        - {name: "prod.frontend.CART_URL", value: "http://cart-prod.rajdevops.online:80/" }
+        - {name: "prod.frontend.USER_URL", value: "http://user-prod.rajdevops.online:80/" }
+        - {name: "prod.frontend.PAYMENT_URL", value: "http://payment-prod.rajdevops.online:80/" }
+        - {name: "prod.frontend.SHIPPING_URL", value: "http://shipping-prod.rajdevops.online:80/" }
+        - {name: "prod.payment.CART_HOST", value: "cart-prod.rajdevops.online" }
+        - {name: "prod.payment.USER_HOST", value: "user-prod.rajdevops.online" }
+        - {name: "prod.payment.CART_PORT", value: "80" }
+        - {name: "prod.payment.USER_PORT", value: "80" }
+        - {name: "prod.payment.AMQP_HOST", value: "rabbitmq-prod.rajdevops.online" }
+        - {name: "prod.payment.AMQP_USER", value: "roboshop" }
+        - {name: "prod.shipping.CART_ENDPOINT", value: "cart-prod.rajdevops.online:80" }
+        - {name: "prod.shipping.DB_HOST", value: "mysql-prod.rajdevops.online" }
+        - {name: "prod.user.MONGO", value: "true" }
+        - {name: "prod.user.MONGO_URL", value: "mongodb://mongodb-prod.rajdevops.online:27017/users" }
+        - {name: "prod.user.REDIS_HOST", value: "redis-prod.rajdevops.online" }
 
         ### PASSWORDS SHOULD NEVER BE KEPT IN THESE REPOS, THOSE SHOULD BE CREATED MAUALLY, BUT FOR LAB PURPOSE IAM CREATING HERE
     - name: Create Secrets
@@ -53,5 +75,22 @@
         - {name: "ses.pass", value: "BMn+5QisAl1FSMKbe7VQDsnGl1YkEo+vd/hkGJM3qpVp" }
         - { name: "dev.ssh.user", value: "centos" }
         - { name: "dev.ssh.pass", value: "DevOps321" }
+
+# PROD Paramters
+        - {name: "prod.payment.AMQP_PASS", value: "roboshop123" }
+        - {name: "prod.rabbitmq.AMQP_PASS", value: "roboshop123" }
+        - {name: "prod.mysql.DB_ADMIN_USER", value: "root" }
+        - {name: "prod.mysql.DB_ADMIN_PASS", value: "RoboShop@1" }
+        - {name: "prod.docdb.DB_ADMIN_USER", value: "admin1" }
+        - {name: "prod.docdb.DB_ADMIN_PASS", value: "RoboShop123" }
+        - {name: "prod.rds.DB_ADMIN_USER", value: "admin1" }
+        - {name: "prod.rds.DB_ADMIN_PASS", value: "RoboShop123" }
+        - {name: "prod.rabbitmq.USER", value: "roboshop" }
+        - {name: "prod.rabbitmq.PASS", value: "roboshop1234" }
+        - {name: "grafana.api_key", value: "eyJrIjoicENWa3dhd25kZmZUeHV5dU1GSzBLalJoOG85dWQwakgiLCJuIjoiY2xpIiwiaWQiOjF9" }
+        - {name: "ses.user", value: "AKIA6FEY5JH4BEGT5IGE" }
+        - {name: "ses.pass", value: "BMn+5QisAl1FSMKbe7VQDsnGl1YkEo+vd/hkGJM3qpVp" }
+        - { name: "prod.ssh.user", value: "centos" }
+        - { name: "prod.ssh.pass", value: "DevOps321" }
 
 # ansible-playbook aws-parameters.yml
