@@ -1,5 +1,6 @@
 component: frontend
-app_version: 1.0.0
+#app_version: 1.0.0
+app_version: "{{ lookup('aws_ssm', '{{env}}.{{component}}.APP_VERSION', region='us-east-1' ) }}"
 service_name: nginx
 monitor_ssh_service: true
 filebeat: true
