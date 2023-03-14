@@ -93,6 +93,14 @@
         - { name: "prod.ssh.user", value: "centos" }
         - { name: "prod.ssh.pass", value: "DevOps321" }
 
+        ## App versions to deploy in DEV
+        - {name: "dev.cart.APP_VERSION", value: "1.0.0" }
+        - {name: "dev.catalogue.APP_VERSION", value: "1.0.1" }
+        - {name: "dev.frontend.APP_VERSION", value: "1.0.0" }
+        - {name: "dev.payment.APP_VERSION", value: "1.0.0" }
+        - {name: "dev.shipping.APP_VERSION", value: "1.0.0" }
+        - {name: "dev.user.APP_VERSION", value: "1.0.1" }
+
         ## App versions to deploy
         - {name: "prod.cart.APP_VERSION", value: "1.0.0" }
         - {name: "prod.catalogue.APP_VERSION", value: "1.0.1" }
